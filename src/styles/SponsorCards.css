@@ -38,15 +38,17 @@
 }
 
 /* Hover effect for cards */
-.card:hover {
+.card:hover, .card:focus {
   transform: translateY(-8px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover/focus */
 }
 
+/* Optional: maintain image size */
 /* Image styling to ensure logos are well-sized and centered */
 .card img {
-  width: 100px;
-  height: 100px;
+  max-width: 100%; /* Ensures logos fit well */
+  height: auto; /* Maintains aspect ratio */
+  width: 100px; /* Set a maximum width */
   margin-bottom: 15px;
   object-fit: contain;
   border-radius: 8px;
@@ -63,6 +65,11 @@
   text-transform: capitalize;
 }
 
+/* Focus state for accessibility */
+.card:focus {
+  outline: 2px solid #1abc9c; /* Example color for focus state */
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .card {
@@ -75,7 +82,7 @@
   }
   
   .card img {
-    width: 80px;
-    height: 80px;
+    width: 80px; /* Adjust logo size for mobile */
+    height: auto; /* Maintain aspect ratio */
   }
 }

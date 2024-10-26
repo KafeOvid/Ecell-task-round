@@ -1,11 +1,15 @@
 import React from 'react';
 import '../styles/SponsorCards.css';
+// Importing logos directly for better path handling
+import logo1 from '../assets/l1.jpg';
+import logo2 from '../assets/l2.png';
+import logo3 from '../assets/l3.png';
 
-// Make sure the logo paths are correct based on your project structure
+// Use the imported logos in the sponsors array
 const sponsors = [
-  { name: 'Sponsor 1', logo: '../assets/l1.jpg' }, // Adjusted paths
-  { name: 'Sponsor 2', logo: '../assets/l2.png' },
-  { name: 'Sponsor 3', logo: '../assets/l3.png' },
+  { name: 'Startup News', logo: logo1, link: 'https://www.sponsor1.com' }, // Add links
+  { name: 'Stock EDGE', logo: logo2, link: 'https://www.sponsor2.com' },
+  { name: 'Top One Percent', logo: logo3, link: 'https://www.sponsor3.com' },
 ];
 
 const SponsorCards = () => (
@@ -14,8 +18,10 @@ const SponsorCards = () => (
     <div className="card-container">
       {sponsors.map((sponsor, index) => (
         <div key={index} className="card">
-          <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
-          <p>{sponsor.name}</p>
+          <a href={sponsor.link} target="_blank" rel="noopener noreferrer"> {/* Make it clickable */}
+            <img src={sponsor.logo} alt={`${sponsor.name} logo`} />
+            <p>{sponsor.name}</p>
+          </a>
         </div>
       ))}
     </div>
