@@ -1,8 +1,11 @@
 /* Navbar Container */
 .navbar {
-  background: #283593; /* Solid color background for consistency */
-  padding: 15px 30px; /* Padding for space */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background: linear-gradient(135deg, #00695c, #00796b); /* Dark teal gradient */
+  padding: 15px 30px; /* Space around the navbar */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for more impact */
+  position: sticky; /* Sticky effect for easy navigation */
+  top: 0; /* Stick to top */
+  z-index: 1000; /* Ensure it is above other elements */
 }
 
 /* Navbar Inner Container */
@@ -12,51 +15,64 @@
   align-items: center; /* Center items vertically */
 }
 
-/* Logo Styling */
+/* Logo Image Styling */
 .logo {
-  font-size: 28px; /* Larger logo size */
-  color: #ffffff; /* White color for better contrast */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Bold font for logo */
+  width: 120px; /* Adjusted size for better visibility */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s; /* Smooth scale transition */
+  filter: brightness(0) invert(1); /* Invert colors for a dark logo on light background */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
 /* Navigation Menu */
 .nav-menu {
   list-style: none; /* Remove bullet points */
   display: flex; /* Flexbox for horizontal display */
-  gap: 25px; /* Space between links */
+  gap: 30px; /* Space between links */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
 }
 
 /* Navigation Link Styling */
 .nav-menu li {
-  display: inline; /* Inline display for list items */
+  position: relative; /* For positioning pseudo-elements */
 }
 
 .nav-menu a {
   text-decoration: none; /* Remove underline */
-  color: #ffffff; /* White color for links */
-  font-weight: 500; /* Medium font weight */
-  padding: 8px 15px; /* Padding for better click area */
-  border-radius: 5px; /* Rounded corners for links */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+  color: #ecf0f1; /* Light grey for text */
+  font-weight: bold; /* Bold font for emphasis */
+  font-size: 18px; /* Font size */
+  padding: 10px 15px; /* Padding for better click area */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition with shadow effect */
 }
 
 /* Hover Effect */
 .nav-menu a:hover {
-  background-color: #1e88e5; /* Light blue background on hover */
-  transform: scale(1.05); /* Slightly scale up on hover */
+  background-color: rgba(236, 240, 241, 0.4); /* Light grey background on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2); /* Shadow on hover for depth */
+}
+
+/* Active Link Styling */
+.nav-menu a.active {
+  background-color: rgba(52,152,219,0.5); /* Bright blue for active link */
+  color: white; /* White text for contrast */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Stack items vertically on small screens */
-    align-items: flex-start; /* Align items to the start */
-  }
-  .nav-menu {
-    flex-direction: column; /* Stack links vertically on small screens */
-    gap: 10px; /* Reduced gap */
-  }
+    .navbar {
+        padding: 10px; /* Consistent padding for mobile */
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Stack links vertically on small screens */
+        gap: 15px; /* Increased gap for better touch targets */
+        align-items: center; /* Center items on small screens */
+    }
 }
