@@ -3,9 +3,9 @@ import '../styles/SponsorCards.css';
 
 // Make sure the logo paths are correct based on your project structure
 const sponsors = [
-  { name: 'Sponsor 1', logo: '/assets/l1.jpg' }, // Adjusted paths
-  { name: 'Sponsor 2', logo: '/assets/l2.png' },
-  { name: 'Sponsor 3', logo: '/assets/l3.png' },
+  { name: 'Sponsor 1', logo: '../assets/l1.jpg' }, // Adjusted paths
+  { name: 'Sponsor 2', logo: '../assets/l2.png' },
+  { name: 'Sponsor 3', logo: '../assets/l3.png' },
 ];
 
 const SponsorCards = () => (
