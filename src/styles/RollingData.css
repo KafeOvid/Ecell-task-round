@@ -1,10 +1,29 @@
-.rolling-data {
+.rolling-data-container {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f9;
 }
 
 .data-item {
-  font-size: 1.5rem;
-  color: #333;
+  text-align: center;
+  margin: 10px;
+}
+
+.data-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  transition: transform 0.3s ease;
+}
+
+.data-label {
+  font-size: 1.2rem;
+  color: #4b6584;
+}
+
+/* Optional hover effect for a little interaction */
+.data-item:hover .data-value {
+  transform: scale(1.1); /* Slightly larger on hover */
 }
