@@ -1,0 +1,62 @@
+/* Navbar Container */
+.navbar {
+  background: #283593; /* Solid color background for consistency */
+  padding: 15px 30px; /* Padding for space */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Navbar Inner Container */
+.navbar-container {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center; /* Center items vertically */
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 28px; /* Larger logo size */
+  color: #ffffff; /* White color for better contrast */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold font for logo */
+}
+
+/* Navigation Menu */
+.nav-menu {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Flexbox for horizontal display */
+  gap: 25px; /* Space between links */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Navigation Link Styling */
+.nav-menu li {
+  display: inline; /* Inline display for list items */
+}
+
+.nav-menu a {
+  text-decoration: none; /* Remove underline */
+  color: #ffffff; /* White color for links */
+  font-weight: 500; /* Medium font weight */
+  padding: 8px 15px; /* Padding for better click area */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+/* Hover Effect */
+.nav-menu a:hover {
+  background-color: #1e88e5; /* Light blue background on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: flex-start; /* Align items to the start */
+  }
+  .nav-menu {
+    flex-direction: column; /* Stack links vertically on small screens */
+    gap: 10px; /* Reduced gap */
+  }
+}
