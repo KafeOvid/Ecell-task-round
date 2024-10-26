@@ -44,6 +44,8 @@
   gap: 30px; /* Space between links */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
+  flex-grow: 1; /* Allow the nav menu to grow and take up space */
+  justify-content: center; /* Center the nav items */
 }
 
 /* Navigation Link Styling */
@@ -93,17 +95,15 @@
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-/* Responsive Design */
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px; /* Consistent padding for mobile */
   }
 
   .navbar-container {
-    flex-direction: row; /* Maintain row direction */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items */
+    flex-direction: row; /* Keep logo and toggle in a row */
+    justify-content: space-between; /* Space between logo and toggle button */
+    align-items: center; /* Center items vertically */
   }
 
   .toggle-button {
@@ -131,17 +131,22 @@
     margin: 10px auto; /* Center the button with auto margins */
     padding: 8px 16px; /* Adjust padding for a smaller button */
     font-size: 14px; /* Smaller font size */
-    background-color: #1abc9c; /* Button color */
-    color: white; /* White text for contrast */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+    width: 30%; /* Optional: make it take most of the width */
   }
 
-  /* Hover Effect for the Button */
-  .join-button:hover {
-    background-color: #16a085; /* Darker teal on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+  /* Stack items vertically */
+  .navbar-container {
+    flex-direction: row; /* Keep logo and toggle in a row */
+  }
+  
+  /* Align the logo to the left and ensure proper spacing */
+  .navbar-container img {
+    margin-right: 10px; /* Space between logo and toggle button */
+  }
+
+  /* New styles to ensure JOIN NOW button is below the navbar */
+  .navbar {
+    display: flex;
+    flex-direction: column; /* Stack items vertically in the navbar */
   }
 }
