@@ -27,6 +27,16 @@
   transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
+/* Toggle Button Styling */
+.toggle-button {
+  background: none; /* Remove default button styling */
+  border: none; /* Remove border */
+  color: #ecf0f1; /* Light color for visibility */
+  font-size: 24px; /* Font size for icon */
+  cursor: pointer; /* Change cursor on hover */
+  display: none; /* Hide by default */
+}
+
 /* Navigation Menu */
 .nav-menu {
   list-style: none; /* Remove bullet points */
@@ -55,24 +65,83 @@
 .nav-menu a:hover {
   background-color: rgba(236, 240, 241, 0.4); /* Light grey background on hover */
   transform: translateY(-2px); /* Slight lift on hover */
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2); /* Shadow on hover for depth */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover for depth */
 }
 
 /* Active Link Styling */
 .nav-menu a.active {
-  background-color: rgba(52,152,219,0.5); /* Bright blue for active link */
+  background-color: rgba(52, 152, 219, 0.5); /* Bright blue for active link */
   color: white; /* White text for contrast */
 }
 
+/* JOIN NOW Button Styling */
+.join-button {
+  background-color: #1abc9c; /* A nice teal color */
+  color: white; /* White text for contrast */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for size */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold font for emphasis */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+}
+
+/* Hover Effect for the Button */
+.join-button:hover {
+  background-color: #16a085; /* Darker teal on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design */
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 10px; /* Consistent padding for mobile */
-    }
+  .navbar {
+    padding: 10px; /* Consistent padding for mobile */
+  }
 
-    .nav-menu {
-        flex-direction: column; /* Stack links vertically on small screens */
-        gap: 15px; /* Increased gap for better touch targets */
-        align-items: center; /* Center items on small screens */
-    }
+  .navbar-container {
+    flex-direction: row; /* Maintain row direction */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items */
+  }
+
+  .toggle-button {
+    display: block; /* Show toggle button on mobile */
+  }
+
+  .nav-menu {
+    display: none; /* Hide nav menu text in mobile view */
+    flex-direction: column; /* Stack links vertically */
+    width: 100%; /* Full width on mobile */
+    padding: 10px 0; /* Padding for the menu */
+    background: rgba(0, 0, 0, 0.8); /* Background for visibility */
+    position: absolute; /* Position it below the navbar */
+    top: 100%; /* Align it below the navbar */
+    left: 0; /* Align to the left */
+    z-index: 999; /* Ensure it is above other elements */
+  }
+
+  .nav-menu.active {
+    display: flex; /* Show menu when active */
+  }
+
+  .join-button {
+    display: block; /* Make the button a block element */
+    margin: 10px auto; /* Center the button with auto margins */
+    padding: 8px 16px; /* Adjust padding for a smaller button */
+    font-size: 14px; /* Smaller font size */
+    background-color: #1abc9c; /* Button color */
+    color: white; /* White text for contrast */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+  }
+
+  /* Hover Effect for the Button */
+  .join-button:hover {
+    background-color: #16a085; /* Darker teal on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
 }
